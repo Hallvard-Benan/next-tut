@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 
-const cars = [
-  { make: "bmw", year: 2004 },
-  { make: "bmw", year: 2004 },
-  { make: "bmw", year: 2004 },
+const posts = [
+  { Name: "John", text: "hello world" },
+  { Name: "Lisa", text: "one two three four five etc..." },
+  { Name: "Ben", text: "Next js is cool, i love ice cream" },
 ];
 
 export async function GET(request) {
-  return NextResponse.json({ posts: cars }, { status: 200 });
+  return NextResponse.json({ posts: posts }, { status: 200 });
 }
