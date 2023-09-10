@@ -106,6 +106,55 @@ const userOne = new User("bon", "jovi");
 
 userOne.greetUser();
 
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a sound`);
+  }
+}
+
+class Dog extends Animal {
+  constructor(name) {
+    super(name);
+  }
+  speak() {
+    console.log(`${this.name} says something`);
+  }
+}
+
+const sheep = new Animal("Ben");
+sheep.speak();
+
+const dog = new Dog("Edd");
+dog.speak();
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(newName) {
+    if (newName !== "peta") {
+      this._name = newName;
+    }
+  }
+}
+
+const newPerson = new Person("ola");
+
+console.log(newPerson.name);
+
+newPerson.name = "peta";
+
+console.log(newPerson.name);
+
 export async function GET(request) {
   console.log("search params >>>", request.nextUrl.searchParams);
   let params = new URLSearchParams(request.nextUrl.searchParams);
